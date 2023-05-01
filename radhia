@@ -1,0 +1,61 @@
+ static void Main(string[] args)
+        {
+            // declaration des variables
+            int i, cpt, pos1, pos2, var;
+            cpt = 0;
+            i = 0;
+            pos1 = 0;
+            pos2 = 0;
+            //saisir les valeurs du tableau
+            Console.WriteLine("saisir la taille du tableau");
+            int n= Convert.ToInt16(Console.ReadLine());
+            int[] tabVal= new int[n];
+            for(int j=0; j<n; j++)
+            {
+                Console.WriteLine("saisir une valeur");
+                tabVal[j]= Convert.ToInt16(Console.ReadLine());
+
+            }
+           
+            Console.WriteLine(" ===================================================");
+            // chercher les posistions
+            Console.WriteLine("entrer le nombre a chercher");
+            var= Convert.ToInt16(Console.ReadLine());
+
+            while ((cpt < 2)&&(i<tabVal.Length))
+            {
+                if ((tabVal[i] == var)&&(cpt==0)) {
+                    pos1 = i;
+                    i++;
+                    cpt++; 
+                }
+                else  if ((tabVal[i] == var)&&(cpt == 1)) {
+                    pos2 = i;
+                    i++;
+                    cpt++;
+                    }
+                else { i++;
+                }
+
+            }
+            //affichage
+            Console.WriteLine(" ===================================================");
+            if (cpt == 2)
+            {
+                Console.WriteLine(" {0} se trouve au moins deux fois ", var);
+                Console.WriteLine("  Position(s) : {0} , {1}",  pos1, pos2);
+
+            }
+            else if (cpt==1)
+            {
+
+                Console.WriteLine(" {0} se trouve une seule fois. Élément est unique  ", var);
+                Console.WriteLine(" Position est {0} ", pos1);
+            }
+            else
+            {
+                Console.WriteLine(" {0} ne se trouve pas dans le tableau", var);
+            }
+
+
+        }
