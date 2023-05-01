@@ -9,7 +9,6 @@ class Program
 
         for (int i = 1; i <= n; i++)
         {
-            Console.ReadLine("bonjour");
             sum += i; // ajouter chaque nombre à la somme
         }
 
